@@ -1,23 +1,23 @@
 <template>
   <div class="job-list">
-    <p>Order by {{ order }}</p>
+     <p>按 {{ order }}</p>
     <ul >
       <transition-group name="list" tag="ul">
         <li v-for="job in filteredList" :key="job.id">
           <h3>{{ job.title }} @{{ job.location }}</h3>
           <div class="salary">
             <img src="@/assets/rupee.svg" />
-
             <p>{{ job.salary }} 卢比</p>
           </div>
           <div class="description">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, dignissimos? Magnam dolorum culpa earum quam, facere possimus ad, veritatis maxime repellendus deleniti minima itaque, placeat unde sequi corporis! Quos, aspernatur?
+              {{ job.content }}
             </p>
           </div>
         </li>
       </transition-group>
     </ul>
+
   </div>
 </template>
 
@@ -51,6 +51,7 @@ export default defineComponent({
           }
       })
     });
+
     return {filteredList}
   }
 })
@@ -63,6 +64,7 @@ export default defineComponent({
     max-width: 960px;
     margin: 40px auto;
   }
+
   .job-list ul {
     padding: 0
   }
