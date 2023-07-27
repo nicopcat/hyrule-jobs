@@ -4,7 +4,7 @@
       <header>
         <div class="text-add">新  增</div>
         <div>
-      <MyButton text="X" :size="12"  class="close" @click="closeModal"/>
+      <MyButton text="X" :size="12"  class="close" @click="closeModal" myPadding="4px 6px" />
          </div>
       </header>
       <div class="content">
@@ -14,9 +14,9 @@
         <input type="text" v-model="location">
         <label for="">报酬</label>
         <input type="number" v-model="salary">
-        <label for="">任务内勤</label>
+        <label for="">任务详情</label>
         <textarea name="" id="" cols="30" rows="10"  v-model="content"></textarea>
-        <MyButton text="发 送" :size="14"  @click="addQuest"/>
+        <MyButton text="发 送" :size="14"  @click="addQuest" myPadding="6px"/>
         <!-- <button @click="addQuest">发 送</button> -->
       </div>
     </div>
@@ -76,7 +76,7 @@ export default defineComponent({
     height: 40px;
     background-color: bisque;
     div{
-      margin:0  10px;
+      margin:0  0 0 10px;
       .text-add{
         font-weight: bold;
       }
@@ -84,7 +84,6 @@ export default defineComponent({
         text-align: center;
         // width: 30px;
         // height: 30px;
-        padding: 0;
       //  background-color: #fff;
     }
     }
